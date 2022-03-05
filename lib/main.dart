@@ -1,30 +1,17 @@
 import 'package:flutter/material.dart';
-import 'views/calendar.dart';
-import 'views/bottom_nav_bar.dart';
-import 'views/home_screen.dart';
-import 'views/calendar_screen.dart';
+import 'views/app.dart';
 
-void main() {
-  runApp(const MyApp());
-}
+void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        primarySwatch: Colors.red,
+        primarySwatch: Colors.blue,
       ),
-      initialRoute: '/',
-      routes: {
-        '/': (context) => const HomeScreen(),
-        '/second' : (context) => const CalendarScreen(),
-      },
+      home: const App(),
     );
   }
 }
-
-
