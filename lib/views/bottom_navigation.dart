@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class BottomNavBar extends StatefulWidget {
-  const BottomNavBar({Key? key}) : super(key: key);
+class BottomNavigation extends StatefulWidget {
+  const BottomNavigation({Key? key}) : super(key: key);
 
   @override
-  State<BottomNavBar> createState() => _BottomNavBarState();
+  State<BottomNavigation> createState() => _BottomNavigationState();
 }
 
-class _BottomNavBarState extends State<BottomNavBar> {
+class _BottomNavigationState extends State<BottomNavigation> {
   int _selectedIndex = 0;
 
   void _onItemTapped(int index) {
@@ -38,4 +38,5 @@ class _BottomNavBarState extends State<BottomNavBar> {
       onTap: _onItemTapped,
     );
   }
+
 }
