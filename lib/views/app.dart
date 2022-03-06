@@ -53,40 +53,26 @@ class _AppState extends State<App> {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: <Widget>[
-              IconButton(
-                icon: const Icon(Icons.home),
-                color: selectedPage == 1 ? Colors.blue : Colors.grey,
-                onPressed: () {
-                  _myPage.jumpToPage(1);
-                  setState(() {
-                    selectedPage = 1;
-                  });
-                },
-              ),
-              IconButton(
-                icon: const Icon(Icons.star),
-                color: selectedPage == 2 ? Colors.blue : Colors.grey,
-                onPressed: () {
-                  _myPage.jumpToPage(2);
-                  setState(() {
-                    selectedPage = 2;
-                  });
-                },
-              ),
-              IconButton(
-                icon: const Icon(
-                  Icons.settings,
-                ),
-                color: selectedPage == 3 ? Colors.blue : Colors.grey,
-                onPressed: () {
-                  _myPage.jumpToPage(3);
-                  setState(() {
-                    selectedPage = 3;
-                  });
-                },
-              ),
+              createIconButton(1),
+              createIconButton(2),
+              createIconButton(3),
             ],
           ),
         ));
-  }
+    }
+
+    IconButton createIconButton(int pageNumber) {
+      return IconButton(
+        icon: const Icon(
+          Icons.layers,
+        ),
+        color: selectedPage == pageNumber ? Colors.blue : Colors.grey,
+        onPressed: () {
+          _myPage.jumpToPage(pageNumber);
+          setState(() {
+            selectedPage = pageNumber;
+          });
+        },
+      );
+    }
 }
